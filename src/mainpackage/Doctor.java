@@ -4,8 +4,8 @@ public class Doctor extends User{
     public String specialty;
 
 
-    public Doctor(String username, String name, String surname, int usersCounter, String specialty) {
-        super(username, name, surname, usersCounter);
+    public Doctor(String username, String name, String surname, int usersCounter, String phone,  String specialty) {
+        super(username, name, surname, usersCounter, phone);
     }
 
     public String getSpecialty() {

@@ -4,8 +4,8 @@ public class Patient extends User{
     public String amka;
     public String asfaleia; // (idiotikh/dhmosia)
 
-    public Patient(String username, String name, String surname, int usersCounter, String amka, String asfaleia) {
-        super(username, name, surname, usersCounter);
+    public Patient(String username, String name, String surname, int usersCounter, String phone, String amka, String asfaleia) {
+        super(username, name, surname, usersCounter, phone);
         this.asfaleia = asfaleia;
         if (usersCounter<1 && amka != "" && amka != null){
             this.amka = amka;

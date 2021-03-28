@@ -5,12 +5,14 @@ public class User {
         String name;
         String surname;
         int usersCounter = 0;
+        String phone;
 
-    public User(String username, String name, String surname, int usersCounter) {
+    public User(String username, String name, String surname, int usersCounter, String phone) {
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.usersCounter = usersCounter +1;
+        this.phone = phone;
         //stoixeia epikoinwnias
     }
 
