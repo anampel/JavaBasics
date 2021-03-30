@@ -11,12 +11,13 @@ public class User {
     /**
      *Constructor
      * */
-    public User(String username, String name, String surname, int usersCounter, String phone) {
+    public User(String username, String name, String surname, String phone) {
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.usersCounter = usersCounter +1;
         this.phone = phone;
+        usersCounter +=1 ;
     }
     /**
      *Getters & Setters

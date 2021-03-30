@@ -12,7 +12,7 @@ public class Appointment extends Patient {
      *Constructor
      * */
     public Appointment(String username, String name, String surname, int usersCounter, String phone, String amka, String asfaleia) {
-        super(username, name, surname, usersCounter, phone, amka, asfaleia);
+        super(username, name, surname, phone, amka, asfaleia);
     }
     /**
      *Just as Java doesn't support multiple inheritance, we created a private inner class that extends a second class Doctor.

@@ -8,17 +8,26 @@ public class Patient extends User{
     /**
      *Constructor
      * */
-    public Patient(String username, String name, String surname, int usersCounter, String phone, String amka, String asfaleia) {
-        super(username, name, surname, usersCounter, phone);
+    public Patient(String username, String name, String surname, String phone, String amka, String asfaleia) {
+        super(username, name, surname, phone);
         this.asfaleia = asfaleia;
-        //tha mpei try-catch
-        if (usersCounter<1 && amka != "" && amka != null){
+
+        if (amka == "" || amka == null){
             this.amka = amka;
-            System.out.println(this.amka);
+            System.out.println(amka);
         }else{
-            if (usersCounter >= 1 && amka != "" && amka != null) {System.out.println("There is already an amka. You cannot change the existing.\"");}
-            if (amka == "" || amka == null){System.out.println("Your enter is empty ");}
+            System.out.println("There is already an amka. You cannot change the existing.");
         }
+        //AYTO PREPEI NA MPEI STHN USER
+        //tha mpei try-catch
+        //Den tha mpei to usersCounter san parametros, tha ginetai auto increament mesa ston constructor
+//        if (usersCounter<1 && amka != "" && amka != null){
+//            this.amka = amka;
+//            System.out.println(this.amka);
+//        }else{
+//            if (usersCounter >= 1 && amka != "" && amka != null) {System.out.println("There is already an amka. You cannot change the existing.");}
+//            if (amka == "" || amka == null){System.out.println("Your enter is empty ");}
+//        }
     }
     /**
      *Getters & Setters

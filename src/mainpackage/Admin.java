@@ -9,7 +9,7 @@ public class Admin extends User{
      *Constructor
      * */
     public Admin(String username, String name, String surname, int usersCounter, String phone, String id) {
-        super(username, name, surname, usersCounter, phone);
+        super(username, name, surname, phone);
         this.id = id;
     }
     /**

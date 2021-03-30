@@ -9,7 +9,7 @@ public class Doctor extends User{
      *Constructor
      * */
     public Doctor(String username, String name, String surname, int usersCounter, String phone,  String specialty) {
-        super(username, name, surname, usersCounter, phone);
+        super(username, name, surname, phone);
     }
     /**
      *Getters & Setters
