@@ -1,21 +1,26 @@
 package mainpackage;
-
+/**
+ *Initialize the user's values and reproduce them to its children
+ * */
 public class User {
         String username;
         String name;
         String surname;
         int usersCounter = 0;
         String phone;
-
+    /**
+     *Constructor
+     * */
     public User(String username, String name, String surname, int usersCounter, String phone) {
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.usersCounter = usersCounter +1;
         this.phone = phone;
-        //stoixeia epikoinwnias
     }
-
+    /**
+     *Getters & Setters
+     * */
     public String getUsername() {
         return username;
     }
@@ -48,11 +53,18 @@ public class User {
     public void setUsersCounter(int usersCounter) {
         this.usersCounter = usersCounter;
     }
-
-    public void login(){
+    /**
+     *Users login
+     * @param username The username of the user
+     * @param phone The phone of the user
+     * */
+    public void login(String username, String phone){
 
     }
-
+    /**
+     *Users logout
+     * No parameters
+     * */
     public void logout(){
 
     }
