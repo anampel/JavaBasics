@@ -1,4 +1,8 @@
 package mainpackage;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *Child of User, concerns patients
  * */
@@ -11,23 +15,7 @@ public class Patient extends User{
     public Patient(String username, String name, String surname, String phone, String amka, String asfaleia) {
         super(username, name, surname, phone);
         this.asfaleia = asfaleia;
-
-        if (amka == "" || amka == null){
-            this.amka = amka;
-            System.out.println(amka);
-        }else{
-            System.out.println("There is already an amka. You cannot change the existing.");
-        }
-        //AYTO PREPEI NA MPEI STHN USER
-        //tha mpei try-catch
-        //Den tha mpei to usersCounter san parametros, tha ginetai auto increament mesa ston constructor
-//        if (usersCounter<1 && amka != "" && amka != null){
-//            this.amka = amka;
-//            System.out.println(this.amka);
-//        }else{
-//            if (usersCounter >= 1 && amka != "" && amka != null) {System.out.println("There is already an amka. You cannot change the existing.");}
-//            if (amka == "" || amka == null){System.out.println("Your enter is empty ");}
-//        }
+        this.registration(username, name, surname, phone, amka, asfaleia);
     }
     /**
      *Getters & Setters
@@ -57,7 +45,7 @@ public class Patient extends User{
      * @param asfaleia The asfaleia of the patient
      * */
     public void registration(String username, String name, String surname, String phone, String amka, String asfaleia){
-
+        System.out.println("Registration completed successfully for the patient " + username);
     }
     /**
      *Searches appointment per doctor name

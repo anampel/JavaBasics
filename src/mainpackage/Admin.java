@@ -4,11 +4,10 @@ package mainpackage;
  * */
 public class Admin extends User{
     public String id;
-
     /**
      *Constructor
      * */
-    public Admin(String username, String name, String surname, int usersCounter, String phone, String id) {
+    public Admin(String username, String name, String surname, String phone, String id) {
         super(username, name, surname, phone);
         this.id = id;
     }
@@ -30,7 +29,7 @@ public class Admin extends User{
      * @param phone The phone of the doctor
      * @param specialty The specialty of the doctor
      * */
-    public void insert_new_doctor(String username, String name, String surname, String phone,  String specialty){
+    public void insertNewDoctor(String username, String name, String surname, String phone,  String specialty){
 
     }
 
@@ -38,7 +37,7 @@ public class Admin extends User{
      *Delete doctors
      * @param username The username of the doctor
      * */
-    public void delete_doctor(String username){
+    public void deleteDoctor(String username){
 
     }
     /**
@@ -49,11 +48,11 @@ public class Admin extends User{
      * @param phone The new or existing phone of the doctor
      * @param specialty The new or existing specialty of the doctor
      * */
-    public void update_doctor(String username, String name, String surname, String phone,  String specialty){
+    public void updateDoctor(String username, String name, String surname, String phone,  String specialty){
 
     }
     /**
-     *Update the values of a patient
+     *Update the values of a patient. Create an object for the Patient class and check if the amka that intended to update already exist.
      * @param username  The username of the patient
      * @param name The name of the patient
      * @param surname The surname of the patient
@@ -61,7 +60,14 @@ public class Admin extends User{
      * @param amka The amka of the patient
      * @param asfaleia The asfaleia of the patient
      * */
-    public void update_patient(String username, String name, String surname, String phone, String amka, String asfaleia){
+    public void updatePatient(String username, String name, String surname, String phone, String amka, String asfaleia){
+        Patient pat = new Patient(username, name, surname, phone, amka, asfaleia);
+        String existingAmka = pat.getAmka();
+        if (existingAmka != amka) {
+            System.out.println("The amka cannot change");
+        }else if (existingAmka==" " || existingAmka == null) {
+            pat.setAmka(amka);
+        }
 
     }
 

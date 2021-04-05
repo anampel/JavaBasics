@@ -1,4 +1,8 @@
 package mainpackage;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *Initialize the user's values and reproduce them to its children
  * */
@@ -18,13 +22,12 @@ public class User {
         this.usersCounter = usersCounter +1;
         this.phone = phone;
         usersCounter +=1 ;
+        getUsernameList();
     }
     /**
      *Getters & Setters
      * */
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -55,7 +58,7 @@ public class User {
         this.usersCounter = usersCounter;
     }
     /**
-     *Users login
+     * Users' login
      * @param username The username of the user
      * @param phone The phone of the user
      * */
@@ -68,6 +71,15 @@ public class User {
      * */
     public void logout(){
 
+    }
+    /**
+     * Creates an Array list with username elements
+     * No parameters
+     * */
+    public ArrayList getUsernameList(){
+        List<String> list= new ArrayList<>();
+        list.add(getUsername());
+        return (ArrayList) list;
     }
 
 }

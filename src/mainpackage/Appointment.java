@@ -1,17 +1,19 @@
 package mainpackage;
 
 import java.util.Date;
+import java.util.Scanner;
+
 /**
 *Create an Appointment, including characteristics from classes Patient and Doctor
 * */
 public class Appointment extends Patient {
-    Date date = new Date();
+    String date ;
     String kind_of_examination;
     String participation;
     /**
      *Constructor
      * */
-    public Appointment(String username, String name, String surname, int usersCounter, String phone, String amka, String asfaleia) {
+    public Appointment(String username, String name, String surname, String phone, String amka, String asfaleia) {
         super(username, name, surname, phone, amka, asfaleia);
     }
     /**
@@ -21,18 +23,19 @@ public class Appointment extends Patient {
         /**
          *Constructor
          * */
-        public Appointment1(String username, String name, String surname, int usersCounter, String phone, String specialty) {
-            super(username, name, surname, usersCounter, phone, specialty);
+        public Appointment1(String username, String name, String surname, String phone, String specialty) {
+            super(username, name, surname, phone, specialty);
         }
     }
     /**
      *Getters & Setters
-     * */
-    public Date getDate() {
+     *
+     * @return*/
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -45,24 +48,27 @@ public class Appointment extends Patient {
     }
 
     public String getParticipation() {
-        return participation;
+         return participation;
     }
 
     public void setParticipation(String participation) {
         this.participation = participation;
+
     }
     /**
      *Create an appointment
-     * @param date The date of the appointment
-     * @param username The username of the patient
-     * @param name The name of the patient
-     * @param surname The surname of the patient
-     * @param phone The phone of the patient
-     * @param amka The amka of the patient
-     * @param examination The kind_of_examination
      * */
-    private void create_appointment(String date, String username, String name, String surname, String phone, String amka, String examination){
-
+    public void createAppointment(){
+        Scanner console = new Scanner(System.in);
+        System.out.println("To create an appointment please insert the following: " +
+                "Date: \n" +
+                "Kind of examination: \n");
+        date = console.next();
+        kind_of_examination = console.next();
+        if (kind_of_examination == "General"){
+            setParticipation("25");
+        }
+        System.out.println("Your appointment for the username " + username + " is in date " + date + " for the examination " + kind_of_examination + " with participation " + getParticipation());
     }
 }
 
