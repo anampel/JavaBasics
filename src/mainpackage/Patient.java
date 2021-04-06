@@ -1,8 +1,5 @@
 package mainpackage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *Child of User, concerns patients
  * */

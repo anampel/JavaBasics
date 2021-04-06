@@ -1,15 +1,17 @@
 package mainpackage;
 
-import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
 *Create an Appointment, including characteristics from classes Patient and Doctor
 * */
+
 public class Appointment extends Patient {
     String date ;
     String kind_of_examination;
     String participation;
+    Scanner console = new Scanner(System.in);
     /**
      *Constructor
      * */
@@ -58,17 +60,23 @@ public class Appointment extends Patient {
     /**
      *Create an appointment
      * */
-    public void createAppointment(){
-        Scanner console = new Scanner(System.in);
+    public void createAppointment() {
+        setParticipation("25€");
         System.out.println("To create an appointment please insert the following: " +
                 "Date: \n" +
                 "Kind of examination: \n");
-        date = console.next();
-        kind_of_examination = console.next();
-        if (kind_of_examination == "General"){
-            setParticipation("25");
+        try {
+            String response = console.nextLine();
+            setDate(response);
+            response = console.nextLine();
+            setKind_of_examination(response);
         }
-        System.out.println("Your appointment for the username " + username + " is in date " + date + " for the examination " + kind_of_examination + " with participation " + getParticipation());
+        catch (InputMismatchException e){
+            System.out.println("Input Exception!");
+        }
+        finally {
+            System.out.println("Your appointment for the username " + username + " is in date " + date + " for the examination " + kind_of_examination + " with participation " + getParticipation());
+        }
     }
 }
 
