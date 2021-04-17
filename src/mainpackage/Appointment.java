@@ -21,7 +21,7 @@ public class Appointment extends Patient {
     /**
      *Just as Java doesn't support multiple inheritance, we created a private inner class that extends a second class Doctor.
      * */
-    private class Appointment1 extends Doctor{
+    private static class Appointment1 extends Doctor{
         /**
          *Constructor
          * */
@@ -32,7 +32,7 @@ public class Appointment extends Patient {
     /**
      *Getters & Setters
      *
-     * @return*/
+     **/
     public String getDate() {
         return date;
     }
@@ -62,7 +62,7 @@ public class Appointment extends Patient {
      * */
     public void createAppointment() {
         setParticipation("25€");
-        System.out.println("To create an appointment please insert the following: " +
+        System.out.println("\nTo create an appointment please insert the following: \n" +
                 "Date: \n" +
                 "Kind of examination: \n");
         try {

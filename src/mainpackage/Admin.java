@@ -63,9 +63,11 @@ public class Admin extends User{
     public void updatePatient(String username, String name, String surname, String phone, String amka, String asfaleia){
         Patient pat = new Patient(username, name, surname, phone, amka, asfaleia);
         String existingAmka = pat.getAmka();
-        if (existingAmka != amka) {
-            System.out.println("The amka cannot change");
-        }else if (existingAmka==" " || existingAmka == null) {
+        try {
+            if (!existingAmka.equals(amka)) {
+                System.out.println("The amka cannot change");
+            }
+        }catch (NullPointerException e){
             pat.setAmka(amka);
         }
 
